@@ -7,7 +7,7 @@
 size = Vector2(149, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh5go"]
-size = Vector2(149, 38)
+size = Vector2(96, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwnds"]
 size = Vector2(131, 79)
@@ -34,13 +34,13 @@ shape = SubResource("RectangleShape2D_vg23t")
 [node name="ufo area" type="Area2D" parent="."]
 
 [node name="ufo area collision" type="CollisionShape2D" parent="ufo area"]
-position = Vector2(-0.5, 0)
+position = Vector2(-7, 0)
 shape = SubResource("RectangleShape2D_bh5go")
 
 [node name="ufo area inside" type="Area2D" parent="."]
 
 [node name="ufo area collision" type="CollisionShape2D" parent="ufo area inside"]
-position = Vector2(-9.5, -176.5)
+position = Vector2(-9.5, -225)
 shape = SubResource("RectangleShape2D_lwnds")
 
 [node name="ufo area sucking area" type="Area2D" parent="."]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://chj87ftwjuuf8"]
+[gd_scene load_steps=4 format=3 uid="uid://chj87ftwjuuf8"]
 
+[ext_resource type="Script" uid="uid://ck2nls0siqrob" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://chwy8g5qjiogp" path="res://ufo.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://4oysuwkentdk" path="res://cow.tscn" id="2_0xm2m"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_h2yge")
 
 [node name="ufo" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(387, 266)

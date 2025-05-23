@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var sucked_up = false
+var value = 5
 var init_pos
 
 func _ready() -> void:
