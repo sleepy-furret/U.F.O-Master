@@ -1,7 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://chwy8g5qjiogp"]
+[gd_scene load_steps=9 format=3 uid="uid://chwy8g5qjiogp"]
 
 [ext_resource type="Script" uid="uid://c5mkoq7e0iwqe" path="res://ufo.gd" id="1_lwnds"]
 [ext_resource type="Texture2D" uid="uid://c2pb81eitdec1" path="res://icon.svg" id="2_7har2"]
+[ext_resource type="Texture2D" uid="uid://dmx05bak1abkg" path="res://tile-set.png" id="2_vg23t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh5go"]
+atlas = ExtResource("2_vg23t")
+region = Rect2(976, 992, 32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vg23t"]
 size = Vector2(149, 38)
@@ -16,11 +21,14 @@ size = Vector2(131, 79)
 points = PackedVector2Array(65.5, -2.5, -65.5, -2.5, -47.5, 158.5, 50.5, 157.5)
 
 [node name="ufo" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_lwnds")
 
 [node name="ufo sprite" type="Sprite2D" parent="."]
-position = Vector2(-10, -200)
-texture = ExtResource("2_7har2")
+texture_filter = 1
+position = Vector2(-10, -226)
+scale = Vector2(6, 6)
+texture = SubResource("AtlasTexture_bh5go")
 
 [node name="shadow" type="Sprite2D" parent="."]
 modulate = Color(0.209908, 0.209908, 0.209908, 1)

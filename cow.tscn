@@ -10,6 +10,7 @@ size = Vector2(164, 126)
 size = Vector2(164, 126)
 
 [node name="cow" type="CharacterBody2D" groups=["suckupable"]]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_yj05v")
 
 [node name="cow_sprite" type="Sprite2D" parent="."]

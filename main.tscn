@@ -8,10 +8,10 @@
 script = ExtResource("1_h2yge")
 
 [node name="ufo" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(387, 266)
+position = Vector2(210, 161)
 
 [node name="cow" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(702, 150)
+position = Vector2(397, 128)
 
 [node name="price label" type="Label" parent="."]
 offset_right = 40.0

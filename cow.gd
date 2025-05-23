@@ -12,9 +12,9 @@ func _physics_process(delta: float) -> void:
 	if position != init_pos:
 		pass
 	if sucked_up == true:
-		velocity.y = -120
+		velocity.y = -40
 	if sucked_up == false and position != init_pos:
-		velocity.y = 120
+		velocity.y = 40
 	if sucked_up == false and position == init_pos:
 		velocity.y = 0
 	move_and_slide()
