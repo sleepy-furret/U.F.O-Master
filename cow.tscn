@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://4oysuwkentdk"]
+
+[ext_resource type="Texture2D" uid="uid://c2pb81eitdec1" path="res://icon.svg" id="1_nuh3y"]
+[ext_resource type="Script" uid="uid://wvjbrjlebfqt" path="res://cow.gd" id="1_yj05v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1w7b"]
+size = Vector2(164, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5k1g"]
+size = Vector2(164, 126)
+
+[node name="cow" type="CharacterBody2D" groups=["suckupable"]]
+script = ExtResource("1_yj05v")
+
+[node name="cow_sprite" type="Sprite2D" parent="."]
+position = Vector2(0.499999, 0)
+scale = Vector2(1.30469, 1)
+texture = ExtResource("1_nuh3y")
+
+[node name="cow_collision" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_m1w7b")
+disabled = true
+
+[node name="cow_area" type="Area2D" parent="." groups=["suckupable"]]
+
+[node name="cow_collision_area" type="CollisionShape2D" parent="cow_area"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_y5k1g")

@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://chwy8g5qjiogp"]
+
+[ext_resource type="Script" uid="uid://c5mkoq7e0iwqe" path="res://ufo.gd" id="1_lwnds"]
+[ext_resource type="Texture2D" uid="uid://c2pb81eitdec1" path="res://icon.svg" id="2_7har2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg23t"]
+size = Vector2(149, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh5go"]
+size = Vector2(149, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwnds"]
+size = Vector2(131, 79)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_lwnds"]
+points = PackedVector2Array(65.5, -2.5, -65.5, -2.5, -47.5, 158.5, 50.5, 157.5)
+
+[node name="ufo" type="CharacterBody2D"]
+script = ExtResource("1_lwnds")
+
+[node name="ufo sprite" type="Sprite2D" parent="."]
+position = Vector2(-10, -200)
+texture = ExtResource("2_7har2")
+
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(0.209908, 0.209908, 0.209908, 1)
+scale = Vector2(1.15107, 0.301464)
+texture = ExtResource("2_7har2")
+
+[node name="ufo collision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_vg23t")
+
+[node name="ufo area" type="Area2D" parent="."]
+
+[node name="ufo area collision" type="CollisionShape2D" parent="ufo area"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_bh5go")
+
+[node name="ufo area inside" type="Area2D" parent="."]
+
+[node name="ufo area collision" type="CollisionShape2D" parent="ufo area inside"]
+position = Vector2(-9.5, -176.5)
+shape = SubResource("RectangleShape2D_lwnds")
+
+[node name="ufo area sucking area" type="Area2D" parent="."]
+
+[node name="ufo area collision" type="CollisionShape2D" parent="ufo area sucking area"]
+position = Vector2(-9.5, -176.5)
+shape = SubResource("ConvexPolygonShape2D_lwnds")
+
+[connection signal="area_entered" from="ufo area" to="." method="_on_ufo_area_area_entered"]
+[connection signal="area_exited" from="ufo area" to="." method="_on_ufo_area_area_exited"]
+[connection signal="area_entered" from="ufo area inside" to="." method="_on_ufo_area_inside_area_entered"]
+[connection signal="area_entered" from="ufo area sucking area" to="." method="_on_ufo_area_sucking_area_area_entered"]
+[connection signal="area_exited" from="ufo area sucking area" to="." method="_on_ufo_area_sucking_area_area_exited"]

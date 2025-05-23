@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://chj87ftwjuuf8"]
+
+[ext_resource type="PackedScene" uid="uid://chwy8g5qjiogp" path="res://ufo.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://4oysuwkentdk" path="res://cow.tscn" id="2_0xm2m"]
+
+[node name="main" type="Node2D"]
+
+[node name="ufo" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(387, 266)
+
+[node name="cow" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(702, 150)
+
+[node name="price label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Money"
