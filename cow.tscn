@@ -1,7 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://4oysuwkentdk"]
+[gd_scene load_steps=7 format=3 uid="uid://4oysuwkentdk"]
 
-[ext_resource type="Texture2D" uid="uid://c2pb81eitdec1" path="res://icon.svg" id="1_nuh3y"]
 [ext_resource type="Script" uid="uid://wvjbrjlebfqt" path="res://cow.gd" id="1_yj05v"]
+[ext_resource type="Texture2D" uid="uid://dmx05bak1abkg" path="res://tile-set.png" id="2_yj05v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj05v"]
+atlas = ExtResource("2_yj05v")
+region = Rect2(0, 992, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1w7b"]
+atlas = ExtResource("2_yj05v")
+region = Rect2(944, 992, 32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1w7b"]
 size = Vector2(164, 126)
@@ -13,10 +21,17 @@ size = Vector2(164, 126)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_yj05v")
 
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.403922)
+y_sort_enabled = true
+position = Vector2(0, 42)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_yj05v")
+
 [node name="cow_sprite" type="Sprite2D" parent="."]
 position = Vector2(0.499999, 0)
-scale = Vector2(1.30469, 1)
-texture = ExtResource("1_nuh3y")
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_m1w7b")
 
 [node name="cow_collision" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)

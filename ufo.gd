@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_ufo_area_inside_area_entered(area: Area2D) -> void:
-	if area.is_in_group("suckupable"):
+	if area.is_in_group("suckupable") and area.get_parent().sucked_up == true:
 		Global.money += area.get_parent().value
 		area.get_parent().queue_free()
 

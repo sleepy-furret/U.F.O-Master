@@ -1,15 +1,18 @@
 [gd_scene load_steps=9 format=3 uid="uid://chwy8g5qjiogp"]
 
 [ext_resource type="Script" uid="uid://c5mkoq7e0iwqe" path="res://ufo.gd" id="1_lwnds"]
-[ext_resource type="Texture2D" uid="uid://c2pb81eitdec1" path="res://icon.svg" id="2_7har2"]
 [ext_resource type="Texture2D" uid="uid://dmx05bak1abkg" path="res://tile-set.png" id="2_vg23t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bh5go"]
 atlas = ExtResource("2_vg23t")
 region = Rect2(976, 992, 32, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwnds"]
+atlas = ExtResource("2_vg23t")
+region = Rect2(0, 992, 32, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vg23t"]
-size = Vector2(149, 38)
+size = Vector2(94, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh5go"]
 size = Vector2(96, 38)
@@ -18,7 +21,7 @@ size = Vector2(96, 38)
 size = Vector2(131, 79)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_lwnds"]
-points = PackedVector2Array(65.5, -2.5, -65.5, -2.5, -47.5, 158.5, 50.5, 157.5)
+points = PackedVector2Array(65.5, -2.5, -65.5, -2.5, -46, 194, 48, 194)
 
 [node name="ufo" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
@@ -31,12 +34,12 @@ scale = Vector2(6, 6)
 texture = SubResource("AtlasTexture_bh5go")
 
 [node name="shadow" type="Sprite2D" parent="."]
-modulate = Color(0.209908, 0.209908, 0.209908, 1)
-scale = Vector2(1.15107, 0.301464)
-texture = ExtResource("2_7har2")
+self_modulate = Color(1, 1, 1, 0.403922)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_lwnds")
 
 [node name="ufo collision" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(-7, 0)
 shape = SubResource("RectangleShape2D_vg23t")
 
 [node name="ufo area" type="Area2D" parent="."]
@@ -48,13 +51,13 @@ shape = SubResource("RectangleShape2D_bh5go")
 [node name="ufo area inside" type="Area2D" parent="."]
 
 [node name="ufo area collision" type="CollisionShape2D" parent="ufo area inside"]
-position = Vector2(-9.5, -225)
+position = Vector2(-9.5, -274)
 shape = SubResource("RectangleShape2D_lwnds")
 
 [node name="ufo area sucking area" type="Area2D" parent="."]
 
 [node name="ufo area collision" type="CollisionShape2D" parent="ufo area sucking area"]
-position = Vector2(-9.5, -176.5)
+position = Vector2(-8, -176)
 shape = SubResource("ConvexPolygonShape2D_lwnds")
 
 [connection signal="area_entered" from="ufo area" to="." method="_on_ufo_area_area_entered"]
