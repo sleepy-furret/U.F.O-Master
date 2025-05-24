@@ -1,14 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://4lsvraxvy626"]
+[gd_scene load_steps=8 format=3 uid="uid://br386qsxfgauy"]
 
-[ext_resource type="Script" uid="uid://byia2wu7pbtbs" path="res://metal_box.gd" id="1_y3nld"]
+[ext_resource type="Script" uid="uid://ca213af01t2nn" path="res://wodden_box.gd" id="1_lmvb3"]
 [ext_resource type="Texture2D" uid="uid://dmx05bak1abkg" path="res://tile-set.png" id="2_c4qmm"]
 [ext_resource type="Script" uid="uid://bniahaxrmnp47" path="res://suckapleble_data.gd" id="2_epj0o"]
 
-[sub_resource type="Resource" id="Resource_12y3t"]
+[sub_resource type="Resource" id="Resource_yjt75"]
 script = ExtResource("2_epj0o")
 sucked_up = false
-value = 20
-strengh_nedded = 3
+value = 10
+strengh_nedded = 2
 metadata/_custom_type_script = "uid://bniahaxrmnp47"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epj0o"]
@@ -17,14 +17,14 @@ region = Rect2(0, 992, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_12y3t"]
 atlas = ExtResource("2_c4qmm")
-region = Rect2(912, 976, 32, 32)
+region = Rect2(880, 976, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0p0i3"]
 size = Vector2(95, 44)
 
-[node name="metal_box" type="CharacterBody2D" groups=["suckupable"]]
-script = ExtResource("1_y3nld")
-suckaplable_data = SubResource("Resource_12y3t")
+[node name="wooden_box" type="CharacterBody2D" groups=["suckupable"]]
+script = ExtResource("1_lmvb3")
+suckaplable_data = SubResource("Resource_yjt75")
 
 [node name="shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.403922)

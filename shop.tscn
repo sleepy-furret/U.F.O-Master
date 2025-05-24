@@ -47,9 +47,10 @@ text = "Money"
 [node name="speed" type="Label" parent="shop_ui"]
 layout_mode = 0
 offset_left = 191.0
-offset_top = 21.0
+offset_top = 14.0
 offset_right = 308.0
-offset_bottom = 96.0
+offset_bottom = 89.0
+scale = Vector2(0.8, 0.8)
 text = "Increase Speed
 Cost:
 Current Speed:"
@@ -57,52 +58,84 @@ Current Speed:"
 [node name="speed_button" type="TextureButton" parent="shop_ui"]
 layout_mode = 0
 offset_left = 332.0
-offset_top = 35.0
+offset_top = 28.0
 offset_right = 447.0
-offset_bottom = 89.0
+offset_bottom = 82.0
+scale = Vector2(0.8, 0.8)
 texture_normal = SubResource("AtlasTexture_6lah5")
 stretch_mode = 0
 
 [node name="speed_button_txt" type="Label" parent="shop_ui"]
 layout_mode = 0
-offset_left = 371.0
-offset_top = 51.0
-offset_right = 411.0
-offset_bottom = 74.0
+offset_left = 361.0
+offset_top = 41.0
+offset_right = 401.0
+offset_bottom = 64.0
+scale = Vector2(0.8, 0.8)
 text = "Buy"
 
 [node name="return" type="Button" parent="shop_ui"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 204.0
-offset_right = 216.0
+offset_right = 185.0
 offset_bottom = 251.0
 text = "Return"
 
 [node name="strengh" type="Label" parent="shop_ui"]
 offset_left = 191.0
-offset_top = 112.0
-offset_right = 308.0
-offset_bottom = 187.0
+offset_top = 88.0
+offset_right = 328.0
+offset_bottom = 163.0
+scale = Vector2(0.8, 0.8)
 text = "Increase Strenght
 Cost:
 Current Strenght:"
 
 [node name="strengh_button" type="TextureButton" parent="shop_ui"]
 offset_left = 332.0
-offset_top = 126.0
+offset_top = 102.0
 offset_right = 447.0
-offset_bottom = 180.0
+offset_bottom = 156.0
+scale = Vector2(0.8, 0.8)
 texture_normal = SubResource("AtlasTexture_6lah5")
 stretch_mode = 0
 
 [node name="strengh_button_txt" type="Label" parent="shop_ui"]
-offset_left = 371.0
-offset_top = 142.0
-offset_right = 411.0
-offset_bottom = 165.0
+offset_left = 364.0
+offset_top = 114.0
+offset_right = 404.0
+offset_bottom = 137.0
+scale = Vector2(0.8, 0.8)
+text = "Buy"
+
+[node name="end" type="Label" parent="shop_ui"]
+offset_left = 191.0
+offset_top = 191.0
+offset_right = 328.0
+offset_bottom = 266.0
+scale = Vector2(0.8, 0.8)
+text = "End The Game
+Cost: 200"
+
+[node name="end_button" type="TextureButton" parent="shop_ui"]
+offset_left = 332.0
+offset_top = 196.0
+offset_right = 447.0
+offset_bottom = 250.0
+scale = Vector2(0.8, 0.8)
+texture_normal = SubResource("AtlasTexture_6lah5")
+stretch_mode = 0
+
+[node name="end_button_txt" type="Label" parent="shop_ui"]
+offset_left = 364.0
+offset_top = 208.0
+offset_right = 404.0
+offset_bottom = 231.0
+scale = Vector2(0.8, 0.8)
 text = "Buy"
 
 [connection signal="button_down" from="shop_ui/speed_button" to="." method="_on_speed_button_button_down"]
 [connection signal="button_down" from="shop_ui/return" to="." method="_on_return_button_down"]
 [connection signal="button_down" from="shop_ui/strengh_button" to="." method="_on_strengh_button_button_down"]
+[connection signal="button_down" from="shop_ui/end_button" to="." method="_on_end_button_button_down"]

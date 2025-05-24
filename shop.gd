@@ -7,6 +7,9 @@ extends Node2D
 @onready var strengh: Label = $shop_ui/strengh
 @onready var strengh_button: TextureButton = $shop_ui/strengh_button
 @onready var strengh_button_txt: Label = $shop_ui/strengh_button_txt
+@onready var end: Label = $shop_ui/end
+@onready var end_button: TextureButton = $shop_ui/end_button
+@onready var end_button_txt: Label = $shop_ui/end_button_txt
 
 var speed_cost = 5
 var speed_increase
@@ -24,13 +27,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	speed_increase = round((Global.speed / (times_speed_is_bought + 1)) / 5)
 	speed_cost = 5 * (times_speed_is_bought + 1)
-	strengh_increase = Global.strengh + 1
+	strengh_increase = 1
 	strengh_cost = 10 * (times_strengh_is_bought + 1)
 	
 	
 	money.text = "Money: " + str(Global.money)
 	speed.text = "Increase Speed \n Cost: " + str(speed_cost) + "\n Current Speed: " + str(Global.speed) + "\n Speed Increased: " + str(speed_increase)
-	strengh.text = "Increase Speed \n Cost: " + str(strengh_cost) + "\n Current Speed: " + str(Global.strengh) + "\n Speed Increased: " + str(strengh_increase)
+	strengh.text = "Increase Strengh \n Cost: " + str(strengh_cost) + "\n Current Strengh: " + str(Global.strengh) + "\n Strengh Increased: " + str(strengh_increase)
 	
 
 func _on_return_button_down() -> void:
@@ -56,3 +59,8 @@ func _on_strengh_button_button_down() -> void:
 		Global.money -= strengh_cost
 	elif times_strengh_is_bought > 5:
 		strengh_button_txt.text = "Sold Out"
+
+
+func _on_end_button_button_down() -> void:
+	if Global.money >= 200:
+		print("GAME ENDED")

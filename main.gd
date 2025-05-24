@@ -16,6 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print(Global.strengh)
 	price_label.text = "Money: " + str(Global.money)
 	if ufo_in_scape_region == true and Input.is_action_just_pressed("ui_accept") and in_shop == false:
 		in_shop = true
