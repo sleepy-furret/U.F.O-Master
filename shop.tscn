@@ -37,7 +37,6 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 
 [node name="money" type="Label" parent="shop_ui"]
-visible = false
 layout_mode = 0
 offset_left = 23.0
 offset_top = 14.0
@@ -80,5 +79,30 @@ offset_right = 216.0
 offset_bottom = 251.0
 text = "Return"
 
+[node name="strengh" type="Label" parent="shop_ui"]
+offset_left = 191.0
+offset_top = 112.0
+offset_right = 308.0
+offset_bottom = 187.0
+text = "Increase Strenght
+Cost:
+Current Strenght:"
+
+[node name="strengh_button" type="TextureButton" parent="shop_ui"]
+offset_left = 332.0
+offset_top = 126.0
+offset_right = 447.0
+offset_bottom = 180.0
+texture_normal = SubResource("AtlasTexture_6lah5")
+stretch_mode = 0
+
+[node name="strengh_button_txt" type="Label" parent="shop_ui"]
+offset_left = 371.0
+offset_top = 142.0
+offset_right = 411.0
+offset_bottom = 165.0
+text = "Buy"
+
 [connection signal="button_down" from="shop_ui/speed_button" to="." method="_on_speed_button_button_down"]
 [connection signal="button_down" from="shop_ui/return" to="." method="_on_return_button_down"]
+[connection signal="button_down" from="shop_ui/strengh_button" to="." method="_on_strengh_button_button_down"]
