@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://b73qr5albiujx"]
+
+[ext_resource type="Script" uid="uid://tflumrnblapi" path="res://shop.gd" id="1_viryw"]
+[ext_resource type="Texture2D" uid="uid://dmx05bak1abkg" path="res://tile-set.png" id="2_e7rdd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blqjs"]
+atlas = ExtResource("2_e7rdd")
+region = Rect2(992, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgaav"]
+atlas = ExtResource("2_e7rdd")
+region = Rect2(976, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lah5"]
+atlas = SubResource("AtlasTexture_fgaav")
+
+[node name="shop" type="Node2D"]
+script = ExtResource("1_viryw")
+
+[node name="shop_ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="shop_ui"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 99.0
+offset_bottom = 59.0
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_blqjs")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="money" type="Label" parent="shop_ui"]
+visible = false
+layout_mode = 0
+offset_left = 23.0
+offset_top = 14.0
+offset_right = 76.0
+offset_bottom = 37.0
+text = "Money"
+
+[node name="speed" type="Label" parent="shop_ui"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 21.0
+offset_right = 308.0
+offset_bottom = 96.0
+text = "Increase Speed
+Cost:
+Current Speed:"
+
+[node name="speed_button" type="TextureButton" parent="shop_ui"]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 35.0
+offset_right = 447.0
+offset_bottom = 89.0
+texture_normal = SubResource("AtlasTexture_6lah5")
+stretch_mode = 0
+
+[node name="speed_button_txt" type="Label" parent="shop_ui"]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 51.0
+offset_right = 411.0
+offset_bottom = 74.0
+text = "Buy"
+
+[node name="return" type="Button" parent="shop_ui"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 204.0
+offset_right = 216.0
+offset_bottom = 251.0
+text = "Return"
+
+[connection signal="button_down" from="shop_ui/speed_button" to="." method="_on_speed_button_button_down"]
+[connection signal="button_down" from="shop_ui/return" to="." method="_on_return_button_down"]

@@ -1,19 +1,15 @@
 extends CharacterBody2D
 
+@export var suckaplable_data: SuckapableData
 @onready var shadow: Sprite2D = $shadow
 
-var sucked_up = false
-var value = 5
 var init_pos
-var strengh_nedded = 1
-
-@export var suckaplable_data: SuckapableData
 
 func _ready() -> void:
 	init_pos = global_position
 
 func _physics_process(delta: float) -> void:
-	shadow.global_position.y = init_pos.y + 20
+	shadow.global_position.y = init_pos.y
 	shadow.global_position.x = init_pos.x
 	
 	

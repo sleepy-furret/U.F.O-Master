@@ -29,7 +29,7 @@ script = ExtResource("1_lwnds")
 
 [node name="ufo sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-10, -226)
+position = Vector2(0, -226)
 scale = Vector2(6, 6)
 texture = SubResource("AtlasTexture_bh5go")
 
@@ -51,7 +51,7 @@ shape = SubResource("RectangleShape2D_bh5go")
 [node name="ufo area inside" type="Area2D" parent="."]
 
 [node name="ufo area collision" type="CollisionShape2D" parent="ufo area inside"]
-position = Vector2(-9.5, -274)
+position = Vector2(0, -288)
 shape = SubResource("RectangleShape2D_lwnds")
 
 [node name="ufo area sucking area" type="Area2D" parent="."]
