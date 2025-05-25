@@ -3,6 +3,8 @@ extends Node2D
 @onready var price_label: Label = $"CanvasLayer/price label"
 @onready var ufo: CharacterBody2D = $ufo
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var barrears_up: TileMapLayer = $barrears_up
+@onready var barrears_down: TileMapLayer = $barrears_down
 
 var ufo_in_scape_region = false
 var in_shop = false
@@ -16,6 +18,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	barrears_down.position.y -= .5
+	barrears_up.position.y += .5
 	print(Global.strengh)
 	price_label.text = "Money: " + str(Global.money)
 	if ufo_in_scape_region == true and Input.is_action_just_pressed("ui_accept") and in_shop == false:

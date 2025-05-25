@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b73qr5albiujx"]
+[gd_scene load_steps=6 format=3 uid="uid://cyuc5pya6h8uh"]
 
 [ext_resource type="Script" uid="uid://tflumrnblapi" path="res://shop.gd" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://dmx05bak1abkg" path="res://tile-set.png" id="2_e7rdd"]
@@ -83,6 +83,7 @@ offset_bottom = 251.0
 text = "Return"
 
 [node name="strengh" type="Label" parent="shop_ui"]
+layout_mode = 0
 offset_left = 191.0
 offset_top = 88.0
 offset_right = 328.0
@@ -93,6 +94,7 @@ Cost:
 Current Strenght:"
 
 [node name="strengh_button" type="TextureButton" parent="shop_ui"]
+layout_mode = 0
 offset_left = 332.0
 offset_top = 102.0
 offset_right = 447.0
@@ -102,6 +104,7 @@ texture_normal = SubResource("AtlasTexture_6lah5")
 stretch_mode = 0
 
 [node name="strengh_button_txt" type="Label" parent="shop_ui"]
+layout_mode = 0
 offset_left = 364.0
 offset_top = 114.0
 offset_right = 404.0
@@ -110,6 +113,7 @@ scale = Vector2(0.8, 0.8)
 text = "Buy"
 
 [node name="end" type="Label" parent="shop_ui"]
+layout_mode = 0
 offset_left = 191.0
 offset_top = 191.0
 offset_right = 328.0
@@ -119,6 +123,7 @@ text = "End The Game
 Cost: 200"
 
 [node name="end_button" type="TextureButton" parent="shop_ui"]
+layout_mode = 0
 offset_left = 332.0
 offset_top = 196.0
 offset_right = 447.0
@@ -128,6 +133,7 @@ texture_normal = SubResource("AtlasTexture_6lah5")
 stretch_mode = 0
 
 [node name="end_button_txt" type="Label" parent="shop_ui"]
+layout_mode = 0
 offset_left = 364.0
 offset_top = 208.0
 offset_right = 404.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://br386qsxfgauy"]
+[gd_scene load_steps=8 format=3 uid="uid://b6ywsvgf68j0"]
 
 [ext_resource type="Script" uid="uid://ca213af01t2nn" path="res://wodden_box.gd" id="1_lmvb3"]
 [ext_resource type="Texture2D" uid="uid://dmx05bak1abkg" path="res://tile-set.png" id="2_c4qmm"]

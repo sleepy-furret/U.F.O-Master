@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://4lsvraxvy626"]
+[gd_scene load_steps=8 format=3 uid="uid://dirsqk5yemwhl"]
 
 [ext_resource type="Script" uid="uid://byia2wu7pbtbs" path="res://metal_box.gd" id="1_y3nld"]
 [ext_resource type="Texture2D" uid="uid://dmx05bak1abkg" path="res://tile-set.png" id="2_c4qmm"]
